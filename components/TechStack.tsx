@@ -51,7 +51,7 @@ const TechStack = () => {
       ];
 
   return (
-    <div className="flex flex-row items-center justify-center mb-10 w-full pt-64 px-5">
+    <div className="flex flex-row items-center justify-center mb-10 w-full px-5">
       <AnimatedTooltip items={people}/>
     </div>
   )

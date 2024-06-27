@@ -1,11 +1,11 @@
 "use client";
-import React, { useCallback, useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion, LayoutGroup } from "framer-motion";
+import React, { useCallback, useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { cn } from "@/utils/cn";
 
 export const FlipWords = ({
   words,
-  duration = 50,
+  duration = 1000,
   className,
 }: {
   words: string[];
@@ -38,7 +38,7 @@ export const FlipWords = ({
       <motion.div
         initial={{
           opacity: 0,
-          y: 10,
+          y: 0,
         }}
         animate={{
           opacity: 1,
@@ -53,10 +53,10 @@ export const FlipWords = ({
         }}
         exit={{
           opacity: 0,
-          y: -40,
-          x: 40,
+          y: 0,
+          x: 0,
           filter: "blur(8px)",
-          scale: 2,
+          scale: 0,
           position: "absolute",
         }}
         className={cn(
@@ -68,7 +68,7 @@ export const FlipWords = ({
         {currentWord.split("").map((letter, index) => (
           <motion.span
             key={currentWord + index}
-            initial={{ opacity: 0, y: 10, filter: "blur(8px)" }}
+            initial={{ opacity: 0, y: 0, filter: "blur(8px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{
               delay: index * 0.08,
