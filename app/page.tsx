@@ -9,7 +9,7 @@ export default function Home() {
   const skills = ["SKILLS"];
 
   return (
-    <main className="flex flex-col items-center justify-center mx-auto sm:px-10 px-5 overflow-hidden overflow-y-hidden w-[calc(100%-4rem)] rounded-md min-h-screen">
+    <main className="flex flex-col items-center justify-center mx-auto sm:px-16 px-10 overflow-hidden w-screen rounded-md min-h-screen">
       <section id="profile" className="min-h-screen pt-10">
         <Vortex rangeY={3000} className="flex items-center flex-col justify-center">
           <Navigation/>
@@ -24,12 +24,12 @@ export default function Home() {
       </section>
       <section id="experience" className="min-h-screen pt-10">
         <Vortex rangeY={3000} className="flex items-center flex-col justify-center">
-          <p>EXPERIENCE</p>
+          <p className="text-5xl">EXPERIENCE</p>
         </Vortex>
       </section>
       <section id="about" className="min-h-screen pt-10">
         <Vortex rangeY={7000} className="flex items-center flex-col justify-center">
-          <p>ABOUT</p>
+          <p className="text-5xl">ABOUT</p>
         </Vortex>
       </section>
     </main>
