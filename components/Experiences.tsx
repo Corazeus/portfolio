@@ -1,9 +1,10 @@
-"use client"
-import React, { useState } from 'react'
-import { Multicards } from './ui/multi-cards'
-import { ArrowLeftCircleIcon, ArrowRightCircleIcon } from '@heroicons/react/16/solid'
-const Experiences = () => {
+"use client";
+import React, { useState } from 'react';
+import { Multicards } from './ui/multi-cards';
+import { ArrowLeftCircleIcon, ArrowRightCircleIcon } from '@heroicons/react/16/solid';
+import { motion, AnimatePresence } from 'framer-motion';
 
+const Experiences = () => {
     const list = [
         {
             id: 1,
@@ -26,11 +27,13 @@ const Experiences = () => {
             description: "A completer of Accenture Technology Academy and hired as a Pacakaged App Developer",
             image: "/images/accenture.svg"
         },
-    ]
+    ];
 
     const [currentID, setCurrentID] = useState<number>(0);
+    const [direction, setDirection] = useState<number>(0);
 
     const handleArrows = (next: boolean) => {
+        setDirection(next ? 1 : -1);
         setCurrentID(prevID => {
             if (next) {
                 return (prevID + 1) % list.length; // Loop back to the start
@@ -40,27 +43,63 @@ const Experiences = () => {
         });
     };
 
-  return (
-    <div id='cards-container' className='flex flex-row justify-center items-center'>
-        <div>
-            <button onClick={() => handleArrows(false)}>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-10">
-            <path strokeLinecap="round" strokeLinejoin="round" d="m11.25 9-3 3m0 0 3 3m-3-3h7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-            </svg>
-            </button>
+    const variants = {
+        enter: (direction: number) => {
+            return {
+                x: direction > 0 ? 1000 : -1000,
+                opacity: 0
+            };
+        },
+        center: {
+            x: 0,
+            opacity: 1
+        },
+        exit: (direction: number) => {
+            return {
+                x: direction < 0 ? 1000 : -1000,
+                opacity: 0
+            };
+        }
+    };
+
+    return (
+        <div id='cards-container' className='flex flex-row justify-center items-center'>
+            <div>
+                <button onClick={() => handleArrows(false)}>
+                    <ArrowLeftCircleIcon className="h-10 w-10 text-gray-500 hover:text-gray-700 mt-96" />
+                </button>
+            </div>
+            <div id='card' className='mx-2 mr-4 relative w-80 h-80'>
+                <AnimatePresence initial={false} custom={direction}>
+                    <motion.div
+                        key={currentID}
+                        custom={direction}
+                        variants={variants}
+                        initial="enter"
+                        animate="center"
+                        exit="exit"
+                        transition={{
+                            x: { type: "spring", stiffness: 300, damping: 30 },
+                            opacity: { duration: 0.2 }
+                        }}
+                        className="absolute w-full h-full"
+                    >
+                        <Multicards
+                            title={list[currentID].title}
+                            subtitle={list[currentID].subtitle}
+                            image={list[currentID].image}
+                            description={list[currentID].description}
+                        />
+                    </motion.div>
+                </AnimatePresence>
+            </div>
+            <div>
+                <button onClick={() => handleArrows(true)}>
+                    <ArrowRightCircleIcon className="h-10 w-10 text-gray-500 hover:text-gray-700 mt-96" />
+                </button>
+            </div>
         </div>
-        <div id='card' className='mx-2'>
-            <Multicards title={list[currentID].title} subtitle={list[currentID].subtitle} image={list[currentID].image} description={list[currentID].description}/>
-        </div>
-        <div>
-            <button onClick={() => handleArrows(true)}>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-10">
-            <path strokeLinecap="round" strokeLinejoin="round" d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-            </svg>
-            </button>
-        </div>
-    </div>
-  )
+    );
 }
 
-export default Experiences
+export default Experiences;
