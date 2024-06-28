@@ -72,17 +72,18 @@ button:hover {
 
 @keyframes glow {
   0% {
-    box-shadow: 0 0 5px #88c0d0;
+    box-shadow: 0 0 0px #88c0d0;
   }
   50% {
-    box-shadow: 0 0 4px #88c0d0, 0 0 10px #88c0d0, 0 0 20px #88c0d0, 0 0 30px #88c0d0;
+    box-shadow: 0 0 0px #88c0d0, 0 0 0px #88c0d0, 0 0 5px #88c0d0, 0 0 10px #88c0d0;
   }
   100% {
-    box-shadow: 0 0 5px #88c0d0;
+    box-shadow: 0 0 0px #88c0d0;
   }
 }
 
 .glow-image {
+  box-shadow:inset;
   animation: glow 2s infinite;
   border-radius: 50%;
 }
