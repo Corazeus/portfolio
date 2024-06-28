@@ -1,3 +1,4 @@
+import Contact from "@/components/Contact";
 import Experiences from "@/components/Experiences";
 import Hero from "@/components/Hero";
 import Navigation from "@/components/Navigation";
@@ -39,7 +40,8 @@ export default function Home() {
       <section id="about" className="min-h-screen pt-10">
         <Vortex rangeY={3000} className="flex items-center flex-col justify-center">
           <p className="text-5xl mb-10">ABOUT</p>
-          <p className="font-light text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur tempore consequatur dicta nostrum maiores pariatur eius, architecto harum in saepe dolorem quia cupiditate rem deleniti nulla autem! Voluptate, iusto ex! Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur tempore consequatur dicta nostrum maiores pariatur eius, architecto harum in saepe dolorem quia cupiditate rem deleniti nulla autem! Voluptate, iusto ex! Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur tempore consequatur dicta nostrum maiores pariatur eius, architecto harum in saepe dolorem quia cupiditate rem deleniti nulla autem! Voluptate, iusto ex!</p>
+          <p className="font-light text-center mb-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur tempore consequatur dicta nostrum maiores pariatur eius, architecto harum in saepe dolorem quia cupiditate rem deleniti nulla autem! Voluptate, iusto ex! Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur tempore consequatur dicta nostrum maiores pariatur eius, architecto harum in saepe dolorem quia cupiditate rem deleniti nulla autem! Voluptate, iusto ex! Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur tempore consequatur dicta nostrum maiores pariatur eius, architecto harum in saepe dolorem quia cupiditate rem deleniti nulla autem! Voluptate, iusto ex!</p>
+          <Contact/>
         </Vortex>
       </section>
     </main>
