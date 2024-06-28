@@ -1,7 +1,10 @@
+import Experiences from "@/components/Experiences";
 import Hero from "@/components/Hero";
 import Navigation from "@/components/Navigation";
 import TechStack from "@/components/TechStack";
+import { BackgroundGradient } from "@/components/ui/background-gradient";
 import { FlipWords } from "@/components/ui/flip-words";
+import { Multicards } from "@/components/ui/multi-cards";
 import { Vortex } from "@/components/ui/vortex";
 
 export default function Home() {
@@ -31,7 +34,8 @@ export default function Home() {
       </section>
       <section id="experience" className="min-h-screen pt-10">
         <Vortex rangeY={3000} className="flex items-center flex-col justify-center">
-          <p className="text-5xl">EXPERIENCE</p>
+          <p className="text-5xl mb-10">EXPERIENCE</p>
+          <Experiences/>
         </Vortex>
       </section>
       <section id="about" className="min-h-screen pt-10">
