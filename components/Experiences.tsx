@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from 'react';
 import { Multicards } from './ui/multi-cards';
-import { ArrowLeftCircleIcon, ArrowRightCircleIcon } from '@heroicons/react/16/solid';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Experiences = () => {
@@ -30,10 +29,9 @@ const Experiences = () => {
     ];
 
     const [currentID, setCurrentID] = useState<number>(0);
-    const [direction, setDirection] = useState<number>(0);
+    const [direction] = useState<number>(0);
 
     const handleArrows = (next: boolean) => {
-        setDirection(next ? 1 : -1);
         setCurrentID(prevID => {
             if (next) {
                 return (prevID + 1) % list.length; // Loop back to the start
@@ -63,13 +61,8 @@ const Experiences = () => {
     };
 
     return (
-        <div id='cards-container' className='flex flex-row justify-center items-center'>
-            <div>
-                <button onClick={() => handleArrows(false)}>
-                    <ArrowLeftCircleIcon className="h-10 w-10 text-gray-500 hover:text-gray-700 mt-96" />
-                </button>
-            </div>
-            <div id='card' className='mx-2 mr-4 relative w-80 h-80'>
+        <div id='cards-container' className='flex flex-col justify-center items-center'>
+            <div id='card' className='mx-2 mr-4 relative w-80 h-80' onClick={() => handleArrows(true)}>
                 <AnimatePresence initial={false} custom={direction}>
                     <motion.div
                         key={currentID}
@@ -84,6 +77,7 @@ const Experiences = () => {
                         }}
                         className="absolute w-full h-full"
                     >
+                        <p className='font-light text-center'>Click to display next card</p>
                         <Multicards
                             title={list[currentID].title}
                             subtitle={list[currentID].subtitle}
@@ -92,11 +86,6 @@ const Experiences = () => {
                         />
                     </motion.div>
                 </AnimatePresence>
-            </div>
-            <div>
-                <button onClick={() => handleArrows(true)}>
-                    <ArrowRightCircleIcon className="h-10 w-10 text-gray-500 hover:text-gray-700 mt-96" />
-                </button>
             </div>
         </div>
     );
