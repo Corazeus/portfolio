@@ -6,12 +6,12 @@ import Link from 'next/link';
 const Navigation = () => {
 
   return (
-    <div className='flex flex-row space-x-4 justify-center'>
+    <header className='flex flex-row font-normal space-x-4'>
         <Link href="/#profile"> <button> PROFILE </button> </Link>
         <Link href="/#skills"> <button> SKILLS </button> </Link>
         <Link href="/#experience"> <button> EXPERIENCE </button> </Link>
         <Link href="/#about"> <button> ABOUT </button> </Link>
-    </div>
+    </header>
   )
 }
 
