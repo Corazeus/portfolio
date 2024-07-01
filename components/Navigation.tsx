@@ -1,12 +1,9 @@
 "use client"
 
-import { useRouter } from 'next/navigation';
 import React from 'react'
 import Link from 'next/link';
 
 const Navigation = () => {
-
-  const router = useRouter();
 
   return (
     <div className='flex flex-row space-x-4 justify-center'>

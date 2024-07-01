@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Multicards } from './ui/multi-cards';
 import { motion, AnimatePresence } from 'framer-motion';
+import { FlipWords } from './ui/flip-words';
 
 const Experiences = () => {
     const list = [
@@ -23,7 +24,7 @@ const Experiences = () => {
             id: 3,
             title: "Accenture Inc. (July 2024 - Present)",
             subtitle: "Associate Software Engineer",
-            description: "A completer of Accenture Technology Academy and hired as a Pacakaged App Developer",
+            description: "Completer of Accenture Technology Academy and hired as a Associate Software Engineer, Pacakaged App Developer",
             image: "/images/accenture.svg"
         },
     ];
@@ -31,13 +32,9 @@ const Experiences = () => {
     const [currentID, setCurrentID] = useState<number>(0);
     const [direction] = useState<number>(0);
 
-    const handleArrows = (next: boolean) => {
+    const handleArrows = () => {
         setCurrentID(prevID => {
-            if (next) {
                 return (prevID + 1) % list.length; // Loop back to the start
-            } else {
-                return (prevID - 1 + list.length) % list.length; // Loop back to the end
-            }
         });
     };
 
@@ -62,7 +59,7 @@ const Experiences = () => {
 
     return (
         <div id='cards-container' className='flex flex-col justify-center items-center'>
-            <div id='card' className='mx-2 mr-4 relative w-80 h-80' onClick={() => handleArrows(true)}>
+            <div id='card' className='mx-2 mr-4 relative w-80 h-80' onClick={() => handleArrows()}>
                 <AnimatePresence initial={false} custom={direction}>
                     <motion.div
                         key={currentID}
