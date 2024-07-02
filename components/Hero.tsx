@@ -1,7 +1,9 @@
+"use client"
 import React from 'react'
 import Message from './Message'
 
 const Hero = () => {
+
   return (
     <div className='justify-center items-center text-center flex flex-col mt-12'>
       <Message/>
