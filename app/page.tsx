@@ -41,7 +41,7 @@ export default function Home() {
 
       <motion.section 
       id="profile" 
-      className="h-screen pt-10 mb-20"
+      className="h-screen pt-10"
       variants={item}
       initial="initial"
       whileInView="animate">
@@ -52,13 +52,13 @@ export default function Home() {
 
       <motion.section 
       id="skills" 
-      className="h-screen pt-10"
+      className="h-screen pt-10 mt-32 xl:mt-2"
       variants={item}
       initial="initial"
       whileInView="animate">
 
         <Vortex rangeY={3000} className="flex items-center flex-col justify-center">
-        <p className="text-5xl mb-10">SKILLS</p>
+        <p className="text-5xl mb-32">SKILLS</p>
         <p className="font-thin text-center my-16 xl:mx-96 lg:mx-40">I am eager to embark on a dynamic career where I
         can leverage my foundational knowledge in back-end and front-end technologies. With a genuine
         passion for continuous learning and improvement, I
@@ -73,7 +73,7 @@ export default function Home() {
 
       <motion.section 
       id="experience" 
-      className="h-screen pt-10 mb-60"
+      className="h-screen pt-10"
       variants={item}
       initial="initial"
       whileInView="animate">
@@ -87,7 +87,7 @@ export default function Home() {
 
       <motion.section 
       id="about" 
-      className="h-screen pt-10"
+      className="h-screen pt-10 xl:mt-20 lg:mt-32 mt-96"
       variants={item}
       initial="initial"
       whileInView="animate">

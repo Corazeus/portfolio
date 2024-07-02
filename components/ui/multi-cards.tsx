@@ -13,7 +13,7 @@ export const Multicards = ({
     }) => {
   
     return (
-        <div id="main-container" className="flex flex-row items-center mx-auto m-3">
+        <div id="main-container" className="flex flex-row items-center">
             <BackgroundGradient>
             <div id='card' className="h-fit w-80 bg-blue-950 bg-opacity-50 rounded-3xl justify-center">
                 <div id="image" className="w-50 mx-auto">
