@@ -13,20 +13,20 @@ export default function Home() {
   const item = {
     initial: {
       opacity: 0,
-      y: 200,
+      y: 300,
     },
     animate: {
       opacity: 1,
       y: 0,
       transition: {
         type: "spring",
-        bounce: 0.3,
-        duration: 1
+        bounce: 0.2,
+        duration: 0.5
       }
     },
     exit: {
       opacity: 0,
-      y: -600,
+      y: 0,
       transition: {
         ease: easeOut,
         bounce: 0.2,
@@ -42,23 +42,21 @@ export default function Home() {
 
       <motion.section 
       id="profile" 
-      className="min-h-screen pt-10"
+      className="h-screen pt-10 mb-20"
       variants={item}
       initial="initial"
-      whileInView="animate"
-      exit="exit">
+      whileInView="animate">
         <Vortex rangeY={3000} className="flex items-center flex-col justify-center">
           <Hero/>
         </Vortex>
       </motion.section>
 
       <motion.section 
-      id="profile" 
-      className="min-h-screen pt-10"
+      id="skills" 
+      className="h-screen pt-10"
       variants={item}
       initial="initial"
-      whileInView="animate"
-      exit="exit">
+      whileInView="animate">
 
         <Vortex rangeY={3000} className="flex items-center flex-col justify-center">
         <p className="text-5xl mb-10">SKILLS</p>
@@ -75,12 +73,11 @@ export default function Home() {
       </motion.section>
 
       <motion.section 
-      id="profile" 
-      className="min-h-screen pt-10 mb-60"
+      id="experience" 
+      className="h-screen pt-10 mb-60"
       variants={item}
       initial="initial"
-      whileInView="animate"
-      exit="exit">
+      whileInView="animate">
 
         <Vortex rangeY={3000} className="flex items-center flex-col justify-center">
           <p className="text-5xl mb-20">EXPERIENCE</p>
@@ -90,17 +87,16 @@ export default function Home() {
       </motion.section>
 
       <motion.section 
-      id="profile" 
-      className="min-h-screen pt-10"
+      id="about" 
+      className="h-screen pt-10"
       variants={item}
       initial="initial"
-      whileInView="animate"
-      exit="exit">
+      whileInView="animate">
 
         <Vortex rangeY={3000} className="flex items-center flex-col justify-center">
           <p className="text-5xl mb-10">ABOUT</p>
           <p className="font-thin text-center my-16 xl:mx-96 lg:mx-40 mb-10">
-            I created this website to showcase my journey as a software engineer, share my projects, and connect with like-minded professionals and potential collaborators. \
+            I created this website to showcase my journey as a software engineer, share my projects, and connect with like-minded professionals and potential collaborators.
             It serves as a digital portfolio where I can present my skills, experiences, and the passion I have for technology and innovation. 
             By sharing my work and insights, I aim to inspire others and contribute to the tech community. 
             Additionally, this platform provides a way for me to continuously learn, grow, and stay up-to-date with the latest trends in the industry. 
