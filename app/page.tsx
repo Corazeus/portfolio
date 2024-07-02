@@ -38,7 +38,6 @@ export default function Home() {
 
   return (
     <main className="flex flex-col items-center justify-center mx-auto sm:px-16 px-10 overflow-hidden w-screen rounded-md min-h-screen">
-      <Navigation/>
 
       <motion.section 
       id="profile" 
